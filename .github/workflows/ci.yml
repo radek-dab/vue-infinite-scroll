@@ -76,7 +76,7 @@ jobs:
         run: npm ci
 
       - name: Build application
-        run: npm run build
+        run: BASE="/$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)/" npm run build
 
       - name: Upload artifact
         id: deployment
